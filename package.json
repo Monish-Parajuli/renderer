@@ -1,0 +1,21 @@
+{
+  "name": "renderer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "clean": "rm -rf ./build",
+    "start": "node build/index.js",
+    "build": "esbuild src/index.ts --bundle --outfile=build/index.js --platform=node --target=node16.16"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.15.12"
+  },
+  "dependencies": {
+    "fastify": "^4.9.2",
+    "fluent-json-schema": "^4.0.0",
+    "puppeteer-core": "^19.2.0"
+  }
+}
