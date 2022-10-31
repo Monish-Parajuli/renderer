@@ -1,5 +1,7 @@
 name: build-docker-image
-on: release
+on:
+  release:
+    types: [published]
 jobs:
   build-renderer-image:
     runs-on: ubuntu-latest
@@ -36,6 +38,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
